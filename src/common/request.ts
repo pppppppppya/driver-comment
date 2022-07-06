@@ -12,7 +12,7 @@ export async function get<T>(url: string, params: any) {
   );
 }
 
-export async function postJson<T>(url: string, data: any) {
+export async function postJson<T>(url: string, data?: any) {
   return request<T>(url, {
     method: 'POST',
     data,
@@ -23,7 +23,7 @@ export async function postJson<T>(url: string, data: any) {
   });
 }
 
-export async function postForm<T>(url: string, params: any) {
+export async function postForm<T>(url: string, params?: any) {
   return request<T>(url, {
     method: 'POST',
     params,
@@ -34,7 +34,7 @@ export async function postForm<T>(url: string, params: any) {
   });
 }
 
-export async function deleteForm<T>(url: string, params: any) {
+export async function deleteForm<T>(url: string, params?: any) {
   return request<T>(url, {
     method: 'DELETE',
     params,
