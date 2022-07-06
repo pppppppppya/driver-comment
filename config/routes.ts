@@ -5,7 +5,7 @@
     routes: [
       {
         name: 'login',
-        path: '/user/login',
+        path: '/user/Login',
         component: './user/Login',
       },
       {

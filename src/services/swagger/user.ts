@@ -32,18 +32,18 @@ export async function createUsersWithListInput(body: API.User[], options?: { [ke
   });
 }
 
-/** Logs user into the system GET /user/login */
+/** Logs user into the system GET /user/Login */
 export async function loginUser(
   params: {
     // query
-    /** The user name for login */
+    /** The user name for Login */
     username: string;
-    /** The password for login in clear text */
+    /** The password for Login in clear text */
     password: string;
   },
   options?: { [key: string]: any },
 ) {
-  return request<string>('/user/login', {
+  return request<string>('/user/Login', {
     method: 'GET',
     params: {
       ...params,

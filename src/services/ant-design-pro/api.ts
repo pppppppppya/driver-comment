@@ -1,7 +1,7 @@
 // @ts-ignore
 /* eslint-disable */
 import { request } from 'umi';
-import { postJson, postForm } from '@/common/request';
+import { postJson } from '@/common/request';
 
 /** 获取当前的用户 GET /api/currentUser */
 export async function currentUser(options?: { [key: string]: any }) {
@@ -13,22 +13,18 @@ export async function currentUser(options?: { [key: string]: any }) {
   });
 }
 
-/** 退出登录接口 POST /api/login/outLogin */
+/** 退出登录接口 POST /api/Login/outLogin */
 export async function outLogin(options?: { [key: string]: any }) {
-  return request<Record<string, any>>('/api/login/outLogin', {
+  return request<Record<string, any>>('/api/Login/outLogin', {
     method: 'POST',
     ...(options || {}),
   });
 }
 
-/** 登录接口 POST /api/login/account */
+/** 登录接口 POST /api/Login/account */
 export async function login(body: API.LoginParams, options?: { [key: string]: any }) {
-  console.log(body);
-  let res = postForm<API.LoginResult>('/api/login/account', body);
-  let res2 = postJson<API.LoginResult>('/api/login/account', body);
-  console.log(res, res2);
-  return null;
-  // return request<API.LoginResult>('/api/login/account', {
+  return postJson<API.LoginResult>('/api/Login/account', body);
+  // return request<API.LoginResult>('/api/Login/account', {
   //   method: 'POST',
   //   headers: {
   //     'Content-Type': 'application/json',
