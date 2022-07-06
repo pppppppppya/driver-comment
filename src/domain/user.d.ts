@@ -6,4 +6,5 @@ type LoginResponse = {
 
 type CurrentUser = {
   name: string
+  avatar: string
 }
